@@ -1,0 +1,239 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    font-family: arial, sans-serif;
+    font-size: 100%;
+}
+
+body {
+    background-color: lightblue;
+    background-color: #ccd7da;
+    background-color: silver;
+    text-align: center;
+    background-image: url(bilder/hintergrund.png);
+}
+
+#wrapper {
+    text-align: left;
+    width: 900px;
+    margin: 0 auto;
+    background-image: url(bilder/hg-steuerung.jpg);
+	border-left: black 1px solid;
+	border-right: black 1px solid;
+}
+
+header {
+/*    background-color: deepskyblue;*/
+    background-image: url(bilder/tuebingen-kopf-900.png);
+    height: 185px;
+}
+
+header p {
+    color: white;
+    text-align: right;
+    font-size: 2em;
+    padding: 10px 40px 0 0;
+	text-shadow: 1px 1px 1px black;
+	opacity: 0.8;
+}
+
+nav {
+/*    background-color: orange;*/
+    width: 234px;
+    float: left;
+    margin-left: 30px;
+}
+
+nav ul {
+    list-style-type: none;    
+	color: white;  /* damit AufzÃ¤hlungszeichen weiÃŸ angezeigt werden */
+}
+
+nav li {
+	margin-top: 1.0em;
+}
+
+nav ul ul {
+/*	background-color: limegreen;*/
+    list-style-type: square;
+    padding-left: 1.5em;
+    margin-bottom: 1em;
+}
+
+nav ul ul li:first-child {
+/*	background-color: green;*/
+	/* Gegenarbeiten zu nav li { margin-top: 1.3em; */
+	margin-top: 0.4em;   
+}
+
+
+nav a {
+/*	background-color: lightblue;*/
+    color: white;
+    text-decoration: none;
+	width: 100%;
+	display: inline-block;
+	line-height: 1.4em;
+
+	/*  sonst Breite nicht sinnvoll handelbar  */
+	box-sizing: border-box;  
+
+	/*  wird erst beim hervorheben der aktiven Zeile benÃ¶tigt  */
+	padding-left: 6px;    
+	padding-right: 20px;
+}
+
+nav li.aktiv a {
+	background-color: #7db0c6;
+	/*	damit der Pfeil rechts nicht kommt */
+	background-image:none;		 
+	/*	keine Unterstreichung, dass es nicht nach Link aussieht */
+	text-decoration: none;
+	/*	Cursor normal, dass es nicht nach Link aussieht */
+	cursor: default;             
+}
+
+nav a:hover {
+    text-decoration: underline;
+	background: url(bilder/dreieck2.gif) top right no-repeat;	
+}
+
+
+
+
+
+article {
+/*
+    background-color: yellowgreen;
+    background-color: #eff;
+*/
+    margin: 20px 40px 30px 320px;
+}
+
+
+article h1,
+article h2
+{
+    color: coral;
+}
+
+article p {
+    padding-bottom: 1em;
+    line-height: 1.7em;
+}
+
+
+figure {
+	background-color: #eee;
+	display: inline-block;
+	padding: 10px;
+	border: silver 1px solid;
+	float: right;
+	margin: 0.4em 0 0.4em 1em;
+}
+
+figcaption {
+	font-size: 80%;
+	text-align: center;
+	font-style: italic;
+}
+
+.bildlinks {
+	float: left;
+	margin: 0.4em 1em 0.4em 0;
+}
+
+
+article ul {
+    padding-left: 1.4em;
+    line-height: 1.7em;
+	margin-bottom: 2em;
+	list-style-type: circle;
+}
+
+article ul ul {
+	margin-bottom: 0em;
+	list-style-type: square;
+}
+
+table {
+	width: 100%;
+    border: silver 1px solid;
+    border-collapse: collapse;
+	margin-bottom: 2em;
+}
+
+table thead {
+    background-color: coral;
+    color: white;
+}
+
+table th,
+table td {
+    padding: 4px 6px;
+	border-right: white 1px solid;
+}
+
+tbody tr:nth-child(even) {background: #ccc}
+tbody tr:nth-child(odd) {background: #fff}
+
+th:last-child,
+td:last-child { 
+	border: silver 1px solid; 
+}
+
+tbody tr:hover {
+	background-color: hsla(50, 20%, 50%, 0.6);
+	cursor: default;
+}
+
+
+dl {
+/*	background-color: yellow;*/
+	margin-top: 1em;
+	margin-bottom: 2em;
+}
+
+dt {
+/*	background-color: orange;*/
+	display: inline-block;
+	float: left;
+	font-weight: bold;
+	max-width: 155px;
+/*	color: coral;*/
+}
+
+dd {
+/*	background-color: lime;*/
+	margin-left: 160px;
+	margin-bottom: 0.5em;
+}
+
+dl div {
+/*	background-color: red;*/
+	clear: both;
+	margin-bottom: 1em;
+	border: 0;
+}
+
+footer {
+    background-color: black;
+	text-align: center;
+    clear:both;
+	line-height: 2em;
+	color: silver;
+	font-size: 80%;
+}
+
+footer a {
+	color: silver;
+	text-decoration: none;
+}
+
+
+
+
+
