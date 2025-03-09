@@ -1,93 +1,153 @@
 <!DOCTYPE html>
-<html lang="de">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<title>Experimentierseiten auf Basis von www.html-seminar.de</title>
-	<meta name="description" content="Kurzbeschreibung">
-	<link href="styles.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Toggle Menü ohne JavaScript (CSS:target)</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+header {
+    background-color: yellow;
+    background-color: gray;
+    width: 100%;
+    float: left;
+    border-bottom: 1px solid black;
+}
+#bereichlogo {
+    color: white;
+    background-color: limegreen;    
+    display: block;
+    padding: 0.5em;
+    text-decoration: none;
+    float: left;    
+}
+#bereichlogo {
+    width: auto;
+}
+#steuerung li {
+    list-style: none;
+    float: left;
+}
+#steuerung a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 0.5em;
+    text-decoration: none;
+    color: white;
+    background-color: gray;
+}    
+.menue-button {
+    display: none;
+}    
+#steuerung {
+    float: right;
+}
+#steuerung a:hover {
+    color: black;
+    background: orange;
+}	
+/* CSS erweitern um MENÜ-Button und entsprechende Steuerung */
+/*	Menü-Button oben rechts einblenden bei kleiner als 600px */
+@media only screen and (max-width:600px) {
+	.menue-button {
+		display: block;
+	}
+	.menue-button {
+		background-color: darkblue;
+		display: block;
+		position: absolute;
+		right: 0;
+		top: 0;
+		padding: 0.5em;
+		color: white;
+		cursor: pointer;
+		text-decoration: none;
+	}	
+	#bereichlogo {
+		width: 100%;
+	}
+	#steuerung {
+		float: left;
+		width: 100%;
+		display: none;
+	}	
+	#steuerung li {
+		width: 100%;
+		border-bottom: 2px solid silver;
+	}	
+	.menue-button:hover {
+		color: black;
+		background: orange;
+	}
+}
+/* die Magie, um die Steuerung einzublenden (auch auf mobile Devices) */
+#nav-menue:target #steuerung {
+    display: block;
+}
+/* ausblenden des Menü-Buttons zum öffnen - somit wird der zum Schließen sichtbar */
+#nav-menue:target .menue-button-beschr-open {
+    display: none ; 
+}    
+/* Allgemein Anweisungen */
+section {
+    padding: 0.5em;
+    float: left;
+    width: 100%;
+}
+h1, p {
+    margin: 0.5em 0 0 0;
+}	
 
-    <style>
-        body {
-            text-align: center;
-            background-color: #1a1003;
-            font-family: Arial, sans-serif;
-            padding: 10px;
-        }
-        h1 {
-            color: #ff4500;
-            font-size: 2em;
-        }
-        h3 {
-            color: #38b812;
-        }
-        .button-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        .button {
-            background-color: #ff69b4;
-            border: none;
-            color: white;
-            padding: 15px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 1.2em;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.2s, background-color 0.3s;
-            width: 100%;
-            max-width: 160px;
-        }
-        .button:hover {
-            background-color: #db3c8f;
-            transform: scale(1.1);
-        }
-        .image-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin: 20px 0;
-        }
-        .image-placeholder {
-            width: 100%;
-            max-width: 300px;
-            height: 200px;
-            background-color: #f0f0f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5em;
-            color: #999;
-            border-radius: 10px;
-        }
-    </style>
-
+</style>	
 </head>
-
 <body>
-	<h3>Experimentierseiten HOME</h3>
-
-    <h1>👑💞💚  Experimente  🍏🐛🍎</h1>
-    <div class="button-container">
-        <button class="button" onclick="window.location.href='u01.html'">🦆  😊</button>
-        <button class="button" onclick="window.location.href='u02.html'">🦆  😊</button>
-        <button class="button" onclick="window.location.href='u03.html'">🚗  🐥</button>
-        <button class="button" onclick="window.location.href='u04.html'">🏳️  🦋</button>
-        <button class="button" onclick="window.location.href='u05.html'">🍌  🌈</button>
-        <button class="button" onclick="window.location.href='u06.html'">🚌  🌻</button>
-        <button class="button" onclick="window.location.href='u07.html'">⚽ Responsives Design 🍒</button>
-        <button class="button" onclick="window.location.href='u08.html'">🍓  🚦</button>
-        <button class="button" onclick="window.location.href='u09.html'">🚜  🍀</button>
-    </div>
-    <div class="image-container">
-        <div class="image-placeholder"><img src="Bild1.jpg" alt="" width="300" height="200"></div>
-        <div class="image-placeholder"><img src="Bild2.jpg" alt="" width="300" height="200"></div>
-        <div class="image-placeholder"><img src="Bild3.jpg" alt="" width="300" height="200"></div>
-    </div>
+<header id="nav-menue">
+    <a href="#" id="bereichlogo">HTML-Seminar.de</a>
+    <nav id="steuerung" role="navigation">
+    	<ul>
+           <li><a href="#">Startseite</a></li>
+           <li><a href="#">HTML lernen</a></li>
+           <li><a href="#">Beispiele</a></li>
+           <li><a href="#">Kontakt</a></li>
+           <li><a href="#">Impressum</a></li>
+        </ul>
+    </nav>
+    <a class="menue-button menue-button-beschr-close"
+       href="#nav-menue-zu">MENÜ zu</a>
+    <a class="menue-button menue-button-beschr-open" 
+       href="#nav-menue">MENÜ auf</a>
+</header>
+<section>
+    <p>Responsives Webdesign (rwd) = Reagieren auf z. B. Bildschirmgrößen.</p>
+  <h1>Toggle Menü ohne JavaScript (CSS:target)</h1>
+  <h2>Steuerung für mobile Geräte</h2>
+  <p>Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt 
+    Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt 
+    Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt 
+    Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt 
+    Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt 
+    Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt 
+    Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt 
+    Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt 
+    Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt 
+    Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt 
+    Inhalt.</p>
+  <p>Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt 
+    Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt 
+    Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt 
+    Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt 
+    Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt 
+    Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt 
+    Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt 
+    Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt 
+    Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt 
+    Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt Inhalt 
+    Inhalt.</p>
+</section>	
 </body>
 </html>
