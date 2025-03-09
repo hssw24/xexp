@@ -1,0 +1,329 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: silver;
+    font-family: Arial, sans-serif;
+    background-image: url(bilder/duene.jpg);
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    /* fÃ¼r alte IE-Versionen zwecks Zentrierung */
+    text-align: center;
+}
+
+/* fÃ¼r alte Browser-Versionen */
+header, nav, footer, article {
+    display: block;
+}
+
+#wrapper {
+/*    background-color: white;*/
+    width: 900px;
+    margin: 0 auto;
+    background-image: url(bilder/hintergrund-inhalt.png);
+    /* fÃ¼r alte IE-Versionen zwecks Zentrierung */
+    text-align: left;    
+}
+
+header {
+/*    background-color: deepskyblue;*/
+    background-image:   url(bilder/verlauf.png),
+                        url(bilder/hintergrund-kopf.png);
+    background-repeat: no-repeat;
+    background-position: right 28px, center;
+    height: 150px;
+    width: 900px;
+    margin: 0 auto;
+}
+
+#logotext {
+    padding-top: 45px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+header p {
+/*    background-color: yellowgreen;*/
+    text-align: right;
+    color: white;
+    padding-right: 20px;
+    text-shadow: 1px 1px 4px black;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+#steuerungoben {
+/*    background-color: orange;*/
+    height: 1.5em;
+    background-image: url(bilder/durchsichtiges-grau.png);
+}
+
+#steuerungoben ul {
+    list-style-type: none;
+}
+
+#steuerungoben li {
+/*    background-color: yellow;*/
+    display: inline-block;
+}
+
+#steuerungoben a {
+    display: inline-block;
+    width: 230px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1.5em;
+    color: white;
+}
+
+#steuerungoben a:hover {
+    background-image: url(bilder/durchsichtiges-grau.png);
+}
+
+
+#steuerunglinks {
+/*    background-color: yellow;*/
+    width: 220px;
+    float: left;
+    margin-top: 20px;
+}
+
+#steuerunglinks ul {
+    padding-left: 2em;
+    list-style-type: none;
+    color: #945e37;
+}
+
+#steuerunglinks ul ul {
+/*    background-color: orange;*/
+    list-style-type: square;
+    padding-top: 0.5em;
+    padding-left: 1em;
+} 
+
+#steuerunglinks li {
+    padding-bottom: 0.8em;
+}
+
+#steuerunglinks a {
+/*    background-color: yellow;*/
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    color: #945e37;
+}
+
+#steuerunglinks a:hover {
+    text-decoration: underline;
+    -webkit-animation-name: animation_steuerung_links;
+    animation-name: animation_steuerung_links;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+@-webkit-keyframes animation_steuerung_links {
+    0%   { color: #945e37; }
+    50%  { color: blue; }
+    100% { color: #945e37; }
+}
+
+@keyframes animation_steuerung_links {
+    0%   { color: #945e37; }
+    50%  { color: blue; }
+    100% { color: #945e37; }
+}
+
+article {
+/*    background-color: yellowgreen;*/
+    width: 430px;
+    float: left;
+    margin-left: 40px;
+}
+
+article h1 {
+    padding-top: 20px;
+    padding-bottom: 0.2em;
+    font-size: 1.8em;
+    color: #e18f54; 
+}
+
+article h2 {
+    color: #e18f54; 
+    padding-top: 0.6em;
+    padding-bottom: 0.2em;
+    font-size: 1.4em;
+}
+
+article p {
+    padding-bottom: 1em;
+    line-height: 1.4em;
+}
+
+article ul, article ol {
+    padding-left: 2em;
+    padding-bottom: 1em;
+}
+
+article li {
+    line-height: 1.4em;
+}
+
+
+
+aside {
+/*    background-color: orchid;*/
+    width: 165px;
+    float: right;
+    margin-top: 20px;
+}
+
+aside p {
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px black;
+}
+
+aside img {
+    border: 1px solid silver;
+}
+
+footer {
+/*    background-color: brown;*/
+    color: white;
+    clear: both;
+    background-image: url(bilder/durchsichtiges-grau.png);
+    text-align: center;
+    height: 1.5em;
+    line-height: 1.5em;    
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.schriftklein {
+    font-size: 0.9em;
+}
+
+.slicknav_menu {
+	display:none;
+}
+
+/* fÃ¼r Tablett und Co */
+@media only screen and ( min-width: 45em ) and ( max-width: 56.25em) {
+	article {
+		/* background-color: yellow;*/
+		width: 62%;
+	}
+	
+	#steuerungoben { 		
+		display: none;
+	}
+
+	.slicknav_menu {
+		display:none;
+	}	
+	
+	#wrapper,
+	header {
+		width: 100%;
+	}
+
+	#wrapper {
+		background-image: url(bilder/hintergrund-inhalt-2.png);   
+	}
+	
+	aside {
+		/* background-color: orchid;*/
+		clear: both;
+		float: none;
+		margin-left: 260px;
+		width: 430px;
+		margin-bottom: 1em;
+	}
+
+	aside img {
+		width: 137px;
+		height: auto;	
+	}
+
+	aside p {
+		color: black;
+		text-shadow: none;
+	}		
+}
+
+
+/* fuer Handy und Co */
+@media only screen and ( max-width: 45em ) {
+	article {
+        /*	background-color: hsla(0, 50%, 100%, 0.3);*/
+		float: none;
+		width: 90%;
+		margin: 0 auto;
+	}		
+	
+	#steuerungoben,
+	#steuerunglinks { 		
+		display: none;
+	}	
+
+	.slicknav_menu {
+		display:block;
+	}
+
+	.slicknav_nav a {
+		text-align: left;
+	}	
+	
+	#wrapper,
+	header {
+		width: 100%;
+	}	
+
+	/* Platz sparen oben - gut fÃ¼r Handy-MenÃ¼-Steuerung */
+	header {		
+		height: 122px;
+		background-position: right bottom, center bottom;
+	}	
+
+	#logotext {
+		padding-top: 15px;
+	}	
+	
+	
+	
+	#wrapper {
+		background-image: none;
+		background-color: hsla(0, 50%, 100%, 0.9);
+	}
+
+	aside {
+		/* background-color: orange;*/
+		float: none;
+		width: 90%;
+		margin: 0 auto;
+		margin-bottom: 1em;
+	}
+
+	aside img {
+		width: 31%;
+		height: auto;
+	}	
+	
+	aside p {
+		color: black;
+		text-shadow: none;
+	}	
+}
+
